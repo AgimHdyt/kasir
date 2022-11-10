@@ -10,5 +10,4 @@ class Menu extends Model
     protected $guarded = ['id'];
 
     use HasFactory;
-
 }

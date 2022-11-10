@@ -17,8 +17,6 @@
                                 <h5 class="card-title">{{ $menu->nama }}</h5>
                                 <p class="card-text">{{ $menu->harga }}</p>
                                 <p class="card-text">{{ $menu->category->nama }}</p>
-                                <p class="card-text">{{ $menu->status }}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
                     </div>
