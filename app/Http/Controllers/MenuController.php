@@ -81,7 +81,11 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        //
+        return view('menu.edit-menu', [
+            'title' => 'Edit Menu',
+            'categories' => Category::all(),
+            'menu' => $menu
+        ]);
     }
 
     /**
@@ -104,6 +108,7 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //
+        Menu::destroy($menu->id);
+        return redirect()->to('/menus')->with('success', 'Menu berhasil dihapus');
     }
 }

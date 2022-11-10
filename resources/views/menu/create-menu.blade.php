@@ -7,7 +7,8 @@
             @csrf
             <div class="form-group">
                 <label for="nama">Nama Menu</label>
-                <input type="text" class="form-control @error('nama')is-invalid @enderror" name="nama" id="nama">
+                <input type="text" class="form-control @error('nama')is-invalid @enderror" name="nama" id="nama"
+                    value="{{ old('nama') }}">
                 @error('nama')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -16,8 +17,8 @@
             </div>
             <div class="form-group">
                 <label for="harga">Harga Menu</label>
-                <input type="number" class="form-control @error('harga')is-invalid @enderror" name="harga"
-                    id="harga">
+                <input type="number" class="form-control @error('harga')is-invalid @enderror" name="harga" id="harga"
+                    value="{{ old('harga') }}">
                 @error('harga')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -29,7 +30,8 @@
                 <select class="form-control @error('kategori') is-invalid @enderror" name="kategori" id="kategori">
                     <option value="">Kategori Menu...</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->nama }}</option>
+                        <option value="{{ $category->id }}" {{ old('kategori') == $category->id ? 'selected' : '' }}>
+                            {{ $category->nama }}</option>
                     @endforeach
                 </select>
                 @error('kategori')
@@ -59,8 +61,8 @@
                 <label for="status">Status</label>
                 <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
                     <option value="">Status...</option>
-                    <option value="ready">Ready</option>
-                    <option value="sold out">Sold Out</option>
+                    <option value="ready" {{ old('status') == 'ready' ? 'selected' : '' }}>Ready</option>
+                    <option value="sold out" {{ old('status') == 'sold out' ? 'selected' : '' }}>Sold Out</option>
                 </select>
                 @error('status')
                     <div class="invalid-feedback">

@@ -1,8 +1,7 @@
 <div class="col-md-3 left_col menu_fixed">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella
-                    Alela!</span></a>
+            <a href="/" class="site_title"><i class="fa fa-money"></i> <span>Kasir App</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -27,8 +26,8 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a href="/"><i class="fa fa-home"></i> Home </a></li>
-                    <li><a href="/categories"><i class="fa fa-bars"></i> Categories </a></li>
-                    <li><a href="/menus"><i class="fa fa-bars"></i> Menus </a></li>
+                    <li><a href="/categories"><i class="fa fa-list"></i> Categories </a></li>
+                    <li><a href="/menus"><i class="fa fa-th-list"></i> Menus </a></li>
 
                     {{-- <li><a href="/menus"><i class="fa fa-home"></i> Menus <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
