@@ -10,4 +10,9 @@ class Menu extends Model
     protected $guarded = ['id'];
 
     use HasFactory;
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'kategori');
+    }
 }
