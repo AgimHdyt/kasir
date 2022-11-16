@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
@@ -25,3 +26,7 @@ Route::get('/', function () {
 Route::resource('/menus', MenuController::class);
 Route::resource('/categories', CategoryController::class);
 Route::resource('/testimoni', TestiController::class);
+
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/add-level', [AdminController::class, 'addLevel']);
+Route::post('/add-level', [AdminController::class, 'saveLevel']);

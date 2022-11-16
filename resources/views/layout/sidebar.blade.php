@@ -28,7 +28,8 @@
                     <li><a href="/"><i class="fa fa-home"></i> Home </a></li>
                     <li><a href="/categories"><i class="fa fa-list"></i> Categories </a></li>
                     <li><a href="/menus"><i class="fa fa-th-list"></i> Menus </a></li>
-                    <li><a href="/testimoni"><i class="fa fa-list"></i> Testimoni </a></li>
+                    <li><a href="/testimoni"><i class="fa fa-list"></i>Testimoni </a></li>
+                    <li><a href="/add-level"><i class="fa fa-users"></i>Add Level </a></li>
 
                     {{-- <li><a href="/menus"><i class="fa fa-home"></i> Menus <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
