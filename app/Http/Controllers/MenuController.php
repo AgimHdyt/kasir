@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -81,6 +82,8 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
+
+        dd($menu);
         return view('menu.edit-menu', [
             'title' => 'Edit Menu',
             'categories' => Category::all(),
@@ -97,7 +100,22 @@ class MenuController extends Controller
      */
     public function update(Request $request, Menu $menu)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required|max:255',
+            'harga' => 'required|numeric',
+            'kategori' => 'required|numeric',
+            'photo' => 'image|file|max:2048|mimes:png,jpg,jpeg',
+            'status' => 'required'
+        ]);
+
+        if ($request->file('photo')) {
+            Storage::delete($request->oldPhoto);
+            $validated['photo'] = $request->file('photo')->store('image');
+        }
+
+        Menu::where('id', $menu->id)->update($validated);
+
+        return redirect()->to('/menus')->with('success', 'Menu berhasil diubah!');
     }
 
     /**

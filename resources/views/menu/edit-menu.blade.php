@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
 
-        <form action="/menus" method="POST" enctype="multipart/form-data" class="col-6">
+        <form action="/menus/{{ $menu->id }}" method="POST" enctype="multipart/form-data" class="col-6">
+            @method('PUT')
             @csrf
             <div class="form-group">
                 <label for="nama">Nama Menu</label>
@@ -49,11 +50,12 @@
                 @endif
             </div>
             <div class="form-group">
+                <input type="hidden" name="oldPhoto" value="{{ $menu->photo }}">
                 <label for="image">Photo</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input @error('photo') is-invalid @enderror" name="photo"
                         id="image">
-                    <label class="custom-file-label" for="image">Choose file</label>
+                    <label class="custom-file-label" for="image">{{ old('Choose file', $menu->photo) }}</label>
                     @error('photo')
                         <div class="invalid-feedback">
                             {{ $message }}

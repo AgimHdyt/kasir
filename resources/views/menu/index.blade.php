@@ -13,9 +13,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $menu->nama }}</h5>
                             <p class="card-text">{{ 'Rp. ' . number_format($menu->harga, 2, ',', '.') }}</p>
-                            <a href="/menus/{{ $menu->id }}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                            <a href="/menus/{{ $menu->id }}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                            <a href="/menus/{{ $menu->id }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            <a href="/menus/{{ $menu->id }}" class="btn btn-primary">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
